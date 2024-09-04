@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro App</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <div class="main w-full min-h-screen flex flex-col items-center bg-red-100">
+      <h1 class="text-6xl font-medium p-4">Pomodoro</h1>
+      <div class="reloj bg-white/50 py-4 w-80 m-4 rounded-lg text-center">
+        <h3 class="estado text-center italic font-semibold"></h3>
+        <h2 class="text-8xl font-light">
+          <span class="minutos"></span>:<span class="segundos">00</span>
+        </h2>
+        <h5 class="text-center font-normal mt-4">
+          #<span class="periodo"></span>
+        </h5>
+      </div>
+      <div class="botones flex justify-between gap-12 m-4">
+        <button
+          class="inicio bg-red-500 py-2 w-24 font-bold text-white rounded-md enabled:hover:bg-red-600 enabled:active:bg-red-700 disabled:opacity-75"
+        >
+          Inicio
+        </button>
+        <button
+          class="pausa bg-red-500 py-2 w-24 font-bold text-white rounded-md enabled:hover:bg-red-600 enabled:active:bg-red-700 disabled:opacity-75"
+        >
+          Pausa
+        </button>
+        <button
+          class="reiniciar bg-red-500 py-2 w-24 font-bold text-white rounded-md enabled:hover:bg-red-600 enabled:active:bg-red-700 disabled:opacity-75"
+        >
+          Reiniciar
+        </button>
+      </div>
+      <div class="inputs flex justify-around gap-4">
+        <div class="flex flex-col gap-2 items-center">
+          <label for="Tiempo de trabajo" class="font-medium"
+            >Tiempo de trabajo</label
+          >
+          <input
+            type="number"
+            class="minTrabajo rounded outline-none p-2 w-1/2"
+            value="25"
+          />
+        </div>
+        <div class="flex flex-col gap-2 items-center">
+          <label for="" class="font-medium">Tiempo de descanso</label>
+          <input
+            type="number"
+            class="minDescanso rounded outline-none p-2 w-1/2"
+            value="5"
+          />
+        </div>
+        <div class="flex flex-col gap-2 items-center">
+          <label for="Tiempo de trabajo" class="font-medium"
+            >Tiempo de descanso largo</label
+          >
+          <input
+            type="number"
+            class="minDescansoLargo rounded outline-none p-2 w-1/2"
+            value="15"
+          />
+        </div>
+      </div>
+      <div class="hacerTareas flex flex-col m-4 gap-4">
+        <h2 class="text-center font-semibold text-xl">Tareas</h2>
+        <div class="flex">
+          <input
+            type="text"
+            class="inputTarea flex-1 outline-none font-normal text-sm p-2"
+          />
+          <button
+            class="agregarTarea p-2 font-bold text-white bg-black/50 hover:bg-black/75 active:bg-black/80"
+          >
+            Agregar
+          </button>
+        </div>
+        <div class="tareas w-96 overflow-auto max-h-48"></div>
+      </div>
+    </div>
+    <script src="./renderer.js"></script>
+  </body>
+</html>

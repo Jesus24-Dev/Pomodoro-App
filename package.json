@@ -1,0 +1,45 @@
+{
+  "name": "pomodoroapp",
+  "version": "1.0.0",
+  "description": "Pomodoro app realizada en Electron",
+  "main": "main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.myapp.PomodoroApp",
+    "productName": "PomodoroApp",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "node_modules/",
+      "img/",
+      "renderer/",
+      "main/",
+      "package.json",
+      "tailwind.config.js",
+      "!**readme.md",
+      "!**package-lock.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "img/img.jpg"
+    }
+  },
+  "keywords": [
+    "Electron",
+    "Pomodoro",
+    "App"
+  ],
+  "author": "Jesus24-Dev",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^32.0.1",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.4.10"
+  }
+}
